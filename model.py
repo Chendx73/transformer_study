@@ -95,7 +95,7 @@ class Transformer(torch.nn.Module):
         self.decoder = Decoder()
         self.fc_out = torch.nn.Linear(32, 39)
 
-    def forward(self, x, y):
+    def forward(self, x: torch.tensor, y: torch.tensor):
         # [b,1,50,50]
         mask_pad_x = mask_pad(x)
         mask_tril_y = mask_tril(y)

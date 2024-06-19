@@ -3,7 +3,7 @@ import torch
 from data import dictionary_x, dictionary_y
 
 
-def mask_pad(data):
+def mask_pad(data: torch.tensor) -> torch.tensor:
     # b句话,每句话50个词,这里是还没embedding的
     # data=[b,50]
     # 判断每个词是不是<pad>
@@ -22,7 +22,7 @@ def mask_pad(data):
     return mask
 
 
-def mask_tril(data):
+def mask_tril(data: torch.tensor):
     # b句话,每句话50个词,这里是还没embedding的
     # data=[b,50]
     # 50*50的矩阵表示每个词对其他词是否可见
